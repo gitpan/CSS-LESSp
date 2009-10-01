@@ -67,11 +67,11 @@ sub parse {
 						$value =~ s/\@$word/$var/;
 					}
 					# expression (+,-,*,/)
-					if ( $value =~ /(\d+)\s*(px|pt|em|%)*\s*(\+|\-|\*|\/)\s*((\d+)\s*(px|pt|em|%)*|\d+)/ ) {						
+					if ( $value =~ /(\d+)\s*(px|pt|em|%)*\s*(\+|\*|\/)\s*((\d+)\s*(px|pt|em|%)*|\d+)/ or $value =~ /(\d+)\s*(px|pt|em|%)*\s*(\-)\s+((\d+)\s*(px|pt|em|%)*|\d+)/ ) {
 						my $eval = $value;
 						my $removed = $1 if $eval =~ s/(px|pt|em|%)//g;
 						if ( $eval !~ /[a-z]/i and $eval = eval($eval) ) {
-							$eval .= "$removed" if $eval;							
+							$eval .= "$removed" if $eval and $removed;							
 							$value = $eval;
 						};
 					}
@@ -204,6 +204,16 @@ CSS::LESSp - LESS for perl. Parse .less files and returns valid css (lesscss.org
 This module is designed to parse and compile .less files in to .css files.
 
 About the documentation and syntax of less files please visit lesscss.org 
+
+=head1 METHODS
+
+=over 1
+
+=item parse
+
+Main parse method, returns array of css file
+
+=back
 
 =head1 BUGS
 

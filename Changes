@@ -1,4 +1,9 @@
 Revision history for Perl extension CSS::LESSp
 
+0.02	 30.09.2009/15:53
+		fixed bug for negative values ( margin: -40px 0px 0px 0px )
+		fixed POD documentation to give correct test
+		fixed use of uninitialized value in string warning - line 74
+
 0.01     29.09.2009/16:33
-    		initial public version
+		initial public version
