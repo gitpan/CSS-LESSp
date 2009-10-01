@@ -3,7 +3,7 @@ package CSS::LESSp;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 sub parse {
 	my $self = shift;
@@ -196,8 +196,15 @@ CSS::LESSp - LESS for perl. Parse .less files and returns valid css (lesscss.org
 =head1 SYNOPSIS
 
   use CSS::LESSp;
-  
-  my $css = CSS::LESSp->parse($file);
+
+  my $buffer;
+  open(IN, "file.less");
+  for ( <IN> ) { $buffer .= $_ };
+  close(IN);
+ 
+  my @css = CSS::LESSp->parse($buffer);
+
+  print join("", @css);
 
 =head1 DESCRIPTION
 
@@ -226,7 +233,7 @@ You can't do this
   }
 
   .comment {
-    width: #defaults[@width];
+	width: #defaults[@width];
   }
 
 All other bugs should be reported via
