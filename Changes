@@ -1,5 +1,10 @@
 Revision history for Perl extension CSS::LESSp
 
+0.80	 21.07.2010/10:08
+		parts of lessp were rewritten
+		dash-prefix and mixins with variables support
+		a lot of other stuff supported ( see .pm file and search for specs )
+
 0.03	 01.10.2009/09:15
 		chanes in pod documentation
 

@@ -7,6 +7,7 @@ WriteMakefile(
     AUTHOR              => 'Ivan Drinchev <drinchev@gmail.com>',
     VERSION_FROM        => 'lib/CSS/LESSp.pm',
     PL_FILES            => {},
+	EXE_FILES			=> [ qw/script\/lessp.pl/ ],
     PREREQ_PM => {
         'Test::More' => 0,
     },
