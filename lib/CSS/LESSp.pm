@@ -7,7 +7,7 @@ use Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw('parse');
-our $VERSION = '0.80';
+our $VERSION = '0.81';
 
 my $id = 1;
 
@@ -694,13 +694,25 @@ It's extremely fast :
  
 =head1 METHODS
 
-=over 1
-
-=item parse
+=head3 parse
 
 Main parse method, returns array of the css file
 
-=back
+=head3 copyFunction
+
+=head3 copyTo
+
+=head3 dump
+=head3 getSelector
+=head3 getValue
+=head3 getVariable
+=head3 insertChild
+=head3 insertFunction
+=head3 insertRule
+=head3 insertVariable
+=head3 isFunction
+=head3 new
+=head3 process
 
 =head1 BUGS
 

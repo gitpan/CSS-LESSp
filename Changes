@@ -1,5 +1,9 @@
 Revision history for Perl extension CSS::LESSp
 
+0.81
+		 28.07.2010/10:00
+		tests files changed to fix the tests		
+		
 0.80	 21.07.2010/10:08
 		parts of lessp were rewritten
 		dash-prefix and mixins with variables support
