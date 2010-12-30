@@ -1,5 +1,8 @@
 Revision history for Perl extension CSS::LESSp
 
+0.82     30.12.2010/16:55
+		fixed tests
+
 0.81
 		 28.07.2010/10:00
 		tests files changed to fix the tests		

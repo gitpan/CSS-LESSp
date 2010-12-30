@@ -7,7 +7,7 @@ use Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw('parse');
-our $VERSION = '0.81';
+our $VERSION = '0.82';
 
 my $id = 1;
 
