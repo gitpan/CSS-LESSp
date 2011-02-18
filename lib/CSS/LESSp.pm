@@ -451,11 +451,11 @@ sub _parse_value {
 		$value =~ s/\#$color/\#$replace/;
 	}
 	# expressions in brackets
-	while ( $value =~ /\(\s*(\d+\s*((px|pt|em|cm|%))*\s*[\+\*\/\-]\s*\d+\s*((px|pt|em|cm|%))*)\s*\)/ ) {
+	while ( $value =~ /\(\s*(\-?\d+\s*((px|pt|em|cm|%))*\s*[\+\*\/\-]\s*\-?\d+\s*((px|pt|em|cm|%))*)\s*\)/ ) {
 		my $expression = my $eval = $1;
 		my $removed = $1 if $eval =~ s/(px|pt|em|cm|%)//g;
-		if ( $eval !~ /[a-z]/i and my $result = eval($eval) ) {							
-			$result .= "$removed" if $result and $removed;
+        if ( $eval !~ /[a-z]/i and defined(my $result = eval($eval)) ) {
+			$result .= "$removed" if defined $result and $removed;
 			$value =~ s/(\(\Q$expression\E\))/$result/;	
 		};						
 	}
