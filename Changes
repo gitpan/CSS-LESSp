@@ -1,5 +1,9 @@
 Revision history for Perl extension CSS::LESSp
 
+0.86
+		Fix for perl < 5.10
+		add MANIFEST
+
 0.85	01.03.2011/14:31
 		fix calculation result=0 inifinte loop bug [Michael Schout]
 		add support for expressions involving negative numbers [Michael Schout]

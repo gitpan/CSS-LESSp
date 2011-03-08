@@ -7,7 +7,7 @@ use Exporter;
 
 our @ISA = qw(Exporter);
 our @EXPORT_OK = qw('parse');
-our $VERSION = '0.85';
+our $VERSION = '0.86';
 
 my $id = 1;
 
@@ -453,7 +453,8 @@ sub _parse_value {
 	# expressions in brackets
 	while ( $value =~ /\(\s*(\-?\d+\s*((px|pt|em|cm|%))*\s*[\+\*\/\-]\s*\-?\d+\s*((px|pt|em|cm|%))*)\s*\)/ ) {
 		my $expression = my $eval = $1;
-		my $removed = $1 if $eval =~ s/(px|pt|em|cm|%)//g;
+		my ($removed) = $eval =~ m/(px|pt|em|cm|%)/;
+		$eval =~ s/(px|pt|em|cm|%)//;
         if ( $eval !~ /[a-z]/i and defined(my $result = eval($eval)) ) {
 			$result .= "$removed" if defined $result and $removed;
 			$value =~ s/(\(\Q$expression\E\))/$result/;	
@@ -737,6 +738,12 @@ or L<bug-CSS-LESSp@rt.cpan.org>.
 =head1 AUTHOR
 
 Ivan Drinchev <drinchev@gmail.com>
+
+=head1 CONTRIBUTORS
+
+People who've helped with this project :
+
+Michael Schout <mschout@gkg.net>
 
 =head1 COPYRIGHT AND LICENSE
 
